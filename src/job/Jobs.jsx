@@ -1,5 +1,7 @@
 // import React from 'react';
 
+import { Link } from "react-router-dom";
+
 const Jobs = ({ job }) => {
   const {
     logo,
@@ -12,19 +14,25 @@ const Jobs = ({ job }) => {
     job_description,
     job_responsibility,
     educational_requirements,
-    experiences
+    experiences,
+    id
   } = job;
-  console.log(job);
+  // console.log(job);
   return (
-    <div className="card shadow-xl pb-4">
+    <div className="card shadow-xl ">
   <figure className="px-10 pt-10">
     <img src={logo} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{job_title}</h2>
     <p>{company_name}</p>
+    <p>{remote_or_onsite}</p>
+    <p>{location}</p>
+    <p>{job_type}</p>
+    <p>{salary}</p>
+    <p>{educational_requirements}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+    <Link to={`/job/:${id}`}><button className="btn btn-primary">View Details</button></Link>
     </div>
   </div>
 </div>

@@ -10,9 +10,13 @@ import Root from './components/Root/Root';
 import Home from './Home/Home';
 import Blog from './Blog/Blog';
 import Statistics from './Statistics/Statistics';
-import Jobs from './Jobs/Jobs';
-import Appling from './Appling/Appling';
 import Error from './Error/Error';
+import Details from './Details/Details';
+import JobsNav from './Jobs/JobsNav';
+import Applingbtn from './Appling/Applingbtn';
+
+
+
 
 
 
@@ -27,10 +31,7 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home></Home>
       },
-      {
-        path: "/applying",
-        element:<Appling></Appling>
-      },
+     
       {
         path: "/blog",
         element:<Blog></Blog>
@@ -40,8 +41,17 @@ const router = createBrowserRouter([
         element:<Statistics></Statistics>
       },
       {
+        path:"/applying",
+        element:<Applingbtn></Applingbtn>
+      },
+      {
         path: "/jobs",
-        element:<Jobs></Jobs>
+        element:<JobsNav></JobsNav>
+      },
+      {
+        path: "/job/:id",
+        element:<Details></Details>,
+        loader:() => fetch('../../public/data/jobs.json')
       }
     ]
   },

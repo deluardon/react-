@@ -1,11 +1,11 @@
 // import React from 'react';
 
-const Jobs = () => {
+const JobsNav = () => {
     return (
         <div>
-            <h3>Jobs</h3>
+            <h1>Jobsnav</h1>
         </div>
     );
 };
 
-export default Jobs;
+export default JobsNav;

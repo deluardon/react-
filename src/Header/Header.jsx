@@ -1,6 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+  const appling=<>
+  <li className="list-none"><Link to="/applying">Star Applying</Link></li>
+  </>
+    
+  
     const Logo=<>
     <li className="text-xl list-none"><NavLink to="/">Home</NavLink></li>
     </>
@@ -41,7 +46,7 @@ const Header = () => {
         {Links}
       </div>
       <div className="navbar-end">
-        <a href="#">Star Applying</a>
+        <a href="#">{appling}</a>
       </div>
     </div>
   );
